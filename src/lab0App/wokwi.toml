@@ -5,3 +5,7 @@ elf = "../../.pio/build/megaatmega2560/firmware.elf"
 
 [megaatmega2560]
 frequency = 16000000
+
+[[serial]]
+port = "/dev/ttyUSB0"
+baud = 9600

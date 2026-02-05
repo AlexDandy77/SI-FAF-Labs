@@ -6,7 +6,7 @@
 // Define constants or macros here
 
 // Declare any functions prototypes here
-void ddButtonSetup(int pin);
+void ddButtonInit(int pin);
 int ddButtonIsPressed(int pin);
 
 #endif

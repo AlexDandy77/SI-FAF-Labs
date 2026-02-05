@@ -1,7 +1,7 @@
 #ifndef DD_LED_H
 #define DD_LED_H
 
-void ddLedSetup(int pin);
+void ddLedInit(int pin);
 void ddLedOn(int pin);
 void ddLedOff(int pin);
 int ddLedIsOn(int pin);

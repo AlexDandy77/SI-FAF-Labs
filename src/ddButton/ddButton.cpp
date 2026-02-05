@@ -1,7 +1,7 @@
 #include "ddButton.h"
 #include <Arduino.h>
 
-void ddButtonSetup(int pin) {
+void ddButtonInit(int pin) {
     pinMode(pin, INPUT_PULLUP);
 }
 
