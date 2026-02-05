@@ -1,7 +1,7 @@
 #include "ddLed.h"
 #include <Arduino.h>
 
-void ddLedSetup(int pin) {
+void ddLedInit(int pin) {
     pinMode(pin, OUTPUT);
 }
 
