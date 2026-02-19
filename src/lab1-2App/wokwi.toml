@@ -1,0 +1,11 @@
+[wokwi]
+version = 1
+firmware = "../../.pio/build/uno/firmware.hex"
+elf = "../../.pio/build/uno/firmware.elf"
+
+[megaatmega2560]
+frequency = 16000000
+
+[[serial]]
+port = "/dev/ttyUSB0"
+baud = 9600

@@ -16,7 +16,6 @@ void lab1AppSetup() {
     
     // Initialize LED hardware
     ddLedInit(LED_PIN);
-    ddLedOff(LED_PIN);
     
     // Print welcome message using STDIO (printf)
     printf("====================================\r\n");

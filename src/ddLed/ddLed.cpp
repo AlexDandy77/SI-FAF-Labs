@@ -3,6 +3,7 @@
 
 void ddLedInit(int pin) {
     pinMode(pin, OUTPUT);
+    ddLedOff(pin);
 }
 
 void ddLedOn(int pin) {
