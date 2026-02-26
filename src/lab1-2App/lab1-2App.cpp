@@ -5,7 +5,7 @@
 #define LED_RED_PIN 13
 #define LED_GREEN_PIN 12
 #define MAX_CODE_LENGTH 4
-#define VALID_CODE "708#"
+#define VALID_CODE "708*"
 
 static char enteredCode[MAX_CODE_LENGTH + 1];
 static int codeIndex = 0;

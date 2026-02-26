@@ -7,5 +7,6 @@ void ddLedOff(int pin);
 int ddLedIsOn(int pin);
 int ddLedIsOff(int pin);
 void ddLedToggle(int pin);
+void ddLedSetState(int pin, bool state);
 
 #endif

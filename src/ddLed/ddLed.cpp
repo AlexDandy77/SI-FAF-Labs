@@ -28,3 +28,8 @@ void ddLedToggle(int pin) {
         ddLedOn(pin);
     }
 }
+
+void ddLedSetState(int pin, bool state)
+{
+    digitalWrite(pin, state ? HIGH : LOW);
+}
