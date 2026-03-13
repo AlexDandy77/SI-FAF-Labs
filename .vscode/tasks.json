@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "clean mega freertos",
+			"type": "shell",
+			"command": "~/.platformio/penv/bin/pio",
+			"args": [
+				"run",
+				"-e",
+				"mega-freertos",
+				"-t",
+				"clean"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build mega freertos final",
+			"type": "shell",
+			"command": "~/.platformio/penv/bin/pio",
+			"args": [
+				"run",
+				"-e",
+				"mega-freertos"
+			],
+			"isBackground": false
+		}
+	]
+}
