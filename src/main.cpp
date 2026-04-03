@@ -4,14 +4,15 @@
 #include "lab1-2App/lab1-2App.h"
 #include "lab4-1App/lab4-1App.h"
 
-#define LAB_0 0
-#define LAB_1 1
+#define LAB_0   0
+#define LAB_1   1
 #define LAB_1_2 2
 #define LAB_2_1 3
 #define LAB_2_2 4
 #define LAB_3_1 5
 #define LAB_3_2 6
 #define LAB_4_1 7
+#define LAB_4_2 8
 
 #ifndef APP_NAME
   #define APP_NAME LAB_2_1  // Default; overridden by build_flags per env
@@ -25,9 +26,8 @@
   #include "lab3-1App/lab3-1App.h"
 #elif APP_NAME == LAB_3_2
   #include "lab3-2App/lab3-2App.h"
-#elif APP_NAME == LAB_4_1
-  // Already included at the top for lab4-1, but strictly speaking others are conditionally included.
-  // We'll leave it as is.
+#elif APP_NAME == LAB_4_2
+  #include "lab4-2App/lab4-2App.h"
 #endif
 
 void setup() {
@@ -47,6 +47,8 @@ void setup() {
     lab3_2AppSetup();
   #elif APP_NAME == LAB_4_1
     lab4_1AppSetup();
+  #elif APP_NAME == LAB_4_2
+    lab4_2AppSetup();
   #endif
 }
 
@@ -67,6 +69,8 @@ void loop() {
     lab3_2AppLoop();
   #elif APP_NAME == LAB_4_1
     lab4_1AppLoop();
+  #elif APP_NAME == LAB_4_2
+    lab4_2AppLoop();
   #endif
 }
 

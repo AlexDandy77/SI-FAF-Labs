@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Alexei Pavlovschii",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 556.2,
+      "left": 182,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 294.4,
+      "left": -90.4,
+      "attrs": { "pins": "i2c", "address": "0x27" }
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": 266.8, "left": 620, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 278.6, "left": 336, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 322.8,
+      "left": 512.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 408,
+      "left": 508.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 564.4, "left": -57.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "relay1:VCC", "mega:5V", "red", [ "h-28.8", "v96", "h98.3" ] ],
+    [ "relay1:GND", "mega:GND.3", "black", [ "h-19.2", "v66.8", "h67.2" ] ],
+    [ "relay1:IN", "mega:2", "green", [ "h-9.6", "v163", "h-163.2", "v288", "h168.8" ] ],
+    [ "relay1:NO", "mega:5V", "red", [ "h20.4", "v180.6", "h-64.9" ] ],
+    [ "relay1:COM", "r1:2", "red", [ "h39.6", "v171.4", "h105.6" ] ],
+    [ "r1:1", "led1:A", "red", [ "v1.2", "h-21.75" ] ],
+    [ "led1:C", "mega:GND.3", "black", [ "v144", "h-141.35" ] ],
+    [ "servo1:PWM", "mega:3", "orange", [ "h-9.6", "v144.2", "h408.7" ] ],
+    [ "servo1:V+", "mega:5V", "red", [ "h-19.2", "v-95.9", "h482.3" ] ],
+    [ "servo1:GND", "mega:GND.3", "black", [ "h-28.8", "v-115.2", "h472.65" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h-48", "v182.5", "h539.9" ] ],
+    [ "lcd1:GND", "mega:GND.3", "black", [ "h-57.6", "v182.4", "h528", "v54.9" ] ],
+    [ "lcd1:SDA", "mega:SDA", "blue", [ "h-38.4", "v489.8", "h594.8" ] ],
+    [ "lcd1:SCL", "mega:SCL", "yellow", [ "h-28.8", "v489.9", "h595.2" ] ],
+    [ "keypad1:R1", "mega:11", "orange", [ "v163.2", "h-298" ] ],
+    [ "keypad1:R2", "mega:10", "orange", [ "v172.8", "h-317.5" ] ],
+    [ "keypad1:R3", "mega:9", "orange", [ "v177.6", "h-336" ] ],
+    [ "keypad1:R4", "mega:8", "orange", [ "v182.4", "h-356" ] ],
+    [ "keypad1:C1", "mega:7", "purple", [ "v192", "h-378.5" ] ],
+    [ "keypad1:C2", "mega:6", "purple", [ "v201.6", "h-398" ] ],
+    [ "keypad1:C3", "mega:5", "purple", [ "v211.2", "h-417.25" ] ],
+    [ "keypad1:C4", "mega:4", "purple", [ "v220.8", "h-436.5" ] ]
+  ],
+  "dependencies": {}
+}

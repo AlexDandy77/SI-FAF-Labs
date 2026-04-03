@@ -1,4 +1,5 @@
 #include "ddKeypad.h"
+#include <Arduino_FreeRTOS.h>
 
 static Keypad keypad(makeKeymap((char*)KEYS), (byte*)ROW_PINS, (byte*)COL_PINS, ROWS, COLS);
 FILE keypadInput = { 0 };
@@ -16,6 +17,6 @@ int ddKeypadGetChar(FILE* stream)
         if (key != NO_KEY) {
             return key;
         }
-        delay(50);
+        vTaskDelay(pdMS_TO_TICKS(50));
     }
 }
