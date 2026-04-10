@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "author": "Alexei Pavlovschii",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -214.2, "left": 233.2, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 19.8, "left": 15.6, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": 9.9, "left": 445.8, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": -30.1, "left": 623.8, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay", "top": -124.6, "left": 38.4, "attrs": {} },
+    { "type": "wokwi-dc-motor", "id": "fanMotor", "top": -205.4, "left": 566.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -81.6,
+      "left": 181.85,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fanOnLed",
+      "top": -205.2,
+      "left": 387.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fanOffLed",
+      "top": -205.2,
+      "left": 445.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rFanOn",
+      "top": -131,
+      "left": 383.15,
+      "rotate": 270,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rFanOff",
+      "top": -131,
+      "left": 440.75,
+      "rotate": 270,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "dht:SDA", "mega:7", "green", [ "v19.2", "h-57.5", "v-124.8", "h-207.2" ] ],
+    [ "pot:SIG", "mega:A0", "blue", [ "v28.8", "h-0.4", "v172.8", "h-438.3" ] ],
+    [ "relay:IN", "mega:2", "green", [ "h-19.2", "v95.8", "h234.4" ] ],
+    [ "mega:5V", "bb1:bp.25", "red", [ "v26.1", "h415.1", "v-259.2" ] ],
+    [ "mega:GND.2", "bb1:bn.25", "black", [ "v16.5", "h395.75", "v-240" ] ],
+    [ "relay:VCC", "bb1:bp.1", "red", [ "h-9.6", "v76.8" ] ],
+    [ "pot:GND", "bb1:bn.24", "black", [ "v19.2", "h-124.8" ] ],
+    [ "pot:VCC", "bb1:bp.23", "red", [ "v28.8", "h-164" ] ],
+    [ "dht:VCC", "bb1:bp.15", "red", [ "v9.6", "h-38.4" ] ],
+    [ "dht:GND", "bb1:bn.22", "black", [ "v9.6", "h19.2" ] ],
+    [ "relay:GND", "bb1:bn.2", "black", [ "h-28.8", "v95.6", "h268.8" ] ],
+    [ "relay:NO", "bb1:bp.2", "red", [ "h30", "v46.2", "h94.4" ] ],
+    [ "relay:COM", "r1:1", "red", [ "h39.6", "v-20.6", "h19.2" ] ],
+    [ "mega:10", "fanMotor:IN1", "green", [ "v-38.4", "h395.6" ] ],
+    [ "mega:11", "fanMotor:IN2", "blue", [ "v-48", "h405.2" ] ],
+    [ "r1:2", "bb1:bn.1", "black", [ "v8.4", "v30.1" ] ],
+    [ "bb1:17b.j", "mega:4", "green", [ "v9.6", "h-172.8" ] ],
+    [ "bb1:16t.b", "bb1:bn.13", "black", [ "v0" ] ],
+    [ "bb1:22t.b", "bb1:bn.18", "black", [ "v0" ] ],
+    [ "rFanOn:1", "bb1:17b.f", "", [ "$bb" ] ],
+    [ "rFanOn:2", "bb1:17t.b", "", [ "$bb" ] ],
+    [ "fanOnLed:A", "bb1:17t.a", "", [ "$bb" ] ],
+    [ "fanOnLed:C", "bb1:16t.a", "", [ "$bb" ] ],
+    [ "rFanOff:1", "bb1:23b.f", "", [ "$bb" ] ],
+    [ "rFanOff:2", "bb1:23t.b", "", [ "$bb" ] ],
+    [ "fanOffLed:A", "bb1:23t.a", "", [ "$bb" ] ],
+    [ "fanOffLed:C", "bb1:22t.a", "", [ "$bb" ] ],
+    [ "bb1:23b.i", "mega:5", "red", [ "v9.6", "h-240" ] ]
+  ],
+  "dependencies": {}
+}
