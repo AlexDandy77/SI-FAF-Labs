@@ -14,6 +14,7 @@
 #define LAB_4_1 7
 #define LAB_4_2 8
 #define LAB_5_1 9
+#define LAB_5_2 10
 
 #ifndef APP_NAME
   #define APP_NAME LAB_2_1  // Default; overridden by build_flags per env
@@ -31,6 +32,8 @@
   #include "lab4-2App/lab4-2App.h"
 #elif APP_NAME == LAB_5_1
   #include "lab5-1App/lab5-1App.h"
+#elif APP_NAME == LAB_5_2
+  #include "lab5-2App/lab5-2App.h"
 #endif
 
 void setup() {
@@ -54,6 +57,8 @@ void setup() {
     lab4_2AppSetup();
   #elif APP_NAME == LAB_5_1
     lab5_1AppSetup();
+  #elif APP_NAME == LAB_5_2
+    lab5_2AppSetup();
   #endif
 }
 
@@ -78,6 +83,8 @@ void loop() {
     lab4_2AppLoop();
   #elif APP_NAME == LAB_5_1
     lab5_1AppLoop();
+  #elif APP_NAME == LAB_5_2
+    lab5_2AppLoop();
   #endif
 }
 

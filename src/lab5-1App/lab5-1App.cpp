@@ -7,7 +7,7 @@
 void lab5_1AppSetup() {
     srvSerialSetup(9600); // Initialize printf support over Serial
     printf("Lab 5-1: ON-OFF Control with Hysteresis (Variant A)\r\n");
-    Serial.flush(); // Ensure serial is fully flushed
+    srvSerialFlush(); // Ensure serial is fully flushed
     delay(10); // small grace period
     taskManagerInit();
 }

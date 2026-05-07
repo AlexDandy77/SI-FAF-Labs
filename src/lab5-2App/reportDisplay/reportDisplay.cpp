@@ -8,12 +8,11 @@ void reportDisplayInit() {
 void reportDisplayProcess() {
     float sp = getSetPointTemp();
     float temp = getCurrentTemp();
-    float hysteresis = getHysteresis();
-    float vOn = sp + hysteresis;
-    float vOff = sp - hysteresis;
-    bool fanOn = getFanState();
+    int pid = getPidOutput();
+    int heaterPwm = getHeaterPwm();
     int fanSpeed = getFanSpeedPercent();
-    bool heaterOn = getRelayState();
+    bool fanOn = getFanState();
+    bool relayOn = getRelayState();
 
     int sp_int = (int)sp;
     int sp_frac = (int)((sp - sp_int) * 100);
@@ -27,21 +26,18 @@ void reportDisplayProcess() {
         t_frac = -t_frac;
     }
 
-    int v_on_int = (int)vOn;
-    int v_off_int = (int)vOff;
-
     printf(">Temp:");
     if (!isTempValid()) {
         printf("nan");
     } else {
         printf("%d.%02d", t_int, t_frac);
     }
-    printf(",SetPoint:%d.%02d,V_on:%d,V_off:%d,Fan:%d,Speed:%d,Heater:%d\r\n",
+    printf(",SetPoint:%d.%02d,PID:%d,HeaterPwm:%d,FanSpeed:%d,Fan:%d,Relay:%d\r\n",
            sp_int,
            sp_frac,
-           v_on_int,
-           v_off_int,
-           fanOn ? 1 : 0,
+           pid,
+           heaterPwm,
            fanSpeed,
-           heaterOn ? 1 : 0);
+           fanOn ? 1 : 0,
+           relayOn ? 1 : 0);
 }
